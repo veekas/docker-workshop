@@ -1,0 +1,21 @@
+  372  cd /users/veekasshrivastava/Documents/"Working Directory"/docker-hello-world
+  373  docker image list
+  374  docker pull ubuntu
+  384  docker build --tag hellonode:0.1 .
+  385  docker image list
+  386  docker run -p 3000:3000 -d hellonode:0.1
+  387  docker container list
+  388  docker container stop 761d3c7fb7ca
+  390  docker container list --all
+  391  docker container rm 761d3c7fb7ca
+  392  docker container list --all
+  393  docker build --tag hellonode:0.2 .
+  394  docker run -p 3000:3000 -d hellonode:0.2
+  395  docker container list
+  396  docker container stop 5f1f4e4b0d75
+  398  docker container rm 5f1f4e4b0d75
+  415  docker build --tag hellonode:0.3 .
+  416  docker image list
+  417  docker run -p 3000:3000 -d hellonode:0.3
+  418  docker container list
+  419  history > docker-hello-world-terminal-history.txt

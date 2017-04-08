@@ -1,0 +1,29 @@
+why docker
+  ___ virtualization v. kernel virtualization
+
+COMMANDS
+
+  FROM: what's the base image?
+  ENV: set environment variable
+  RUN: run setup content
+  COPY: copy content into the container
+  EXPOSE: document inbound ports
+  CMD: the thing to start
+
+EXAMPLE
+
+  FROM ubuntu:14.04
+
+  RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  RUN apt-get update
+  RUN apt-get install -y nodejs
+
+  RUN mkdir -p /usr/src/app
+  WORKDIR /usr/src/app
+
+  COPY package.json /usr/src/app/
+  RUN npm install
+  COPY . /usr/src/app
+
+  EXPOSE 5000
+  CMD [ "npm", "start" ]
